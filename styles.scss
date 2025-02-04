@@ -1,0 +1,67 @@
+// Variables
+$primary-color: blue;
+
+.button1 {
+    background-color: $primary-color; /* green */
+    color: white;
+    transition: background-color 1s ease, transform 1s ease;
+}
+
+.button1:hover {
+    background-color: #3e8e41; /* Darker green */
+    transform: scale(1.1); /* Scale up on hover */
+    color: red;
+}
+
+
+@keyframes bounce {
+    0% {
+      top: 0;
+      transform: scaleY(1);
+    }
+    50% {
+      top: 100px;
+      transform: scaleY(0.7);
+    }
+    100% {
+      top: 0;
+      transform: scaleY(1);
+    }
+  }
+
+
+  .button2 {
+    color: white;
+    width: 50px;
+    height: 50px;
+    background-color: $primary-color;
+    border: $primary-color thin solid;
+    border-radius: 50%;
+    position: relative;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+  }
+
+
+  @import "animations"; // Import the mixins
+
+  .loading-spinner {
+    width: 3em;
+    height: 3em;
+    border:thick $primary-color solid;
+    border-top: red thick solid;
+    border-radius: 50%;
+    @include spin-animation(1s);
+  }
+
+  .icon-refresh {
+    width: 1em;
+    height: 1em;
+    border:thick red dashed;
+    @include spin-animation(3s, 2);
+  }
+
+  

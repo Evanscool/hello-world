@@ -1,0 +1,18 @@
+
+
+// In the _animations.scss file:
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @mixin spin-animation($duration: 2s, $iteration-count: infinite) {
+    animation-name: spin;
+    animation-duration: $duration;
+    animation-iteration-count: $iteration-count;
+    animation-timing-function: linear; 
+  }
